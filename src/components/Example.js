@@ -1,11 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import styled from 'styled-components/native'
 import PropTypes from 'prop-types'
-import { TextInput } from 'react-native'
 import { updateExampleText } from '../actions/exampleActions'
 
+const Input = styled.TextInput`
+  border: 1px solid blue;
+`
+
 function Example({ text, setText }) {
-  return <TextInput value={text} onChangeText={setText} />
+  return <Input value={text} onChangeText={setText} />
 }
 
 Example.propTypes = {
