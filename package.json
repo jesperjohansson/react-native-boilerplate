@@ -1,0 +1,71 @@
+{
+  "name": "app",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Jesper Johansson",
+    "url": "https://github.com/jesperjohansson"
+  },
+  "config": {
+    "device": "Pixel_3_API_23"
+  },
+  "scripts": {
+    "dev": "yarn simulate",
+    "dev:ios": "yarn simulate:ios",
+    "dev:android": "yarn simulate:android",
+    "simulate": "yarn simulate:ios | yarn simulate:android",
+    "simulate:ios": "react-native run-ios",
+    "simulate:android": "emulator -avd $npm_package_config_device | react-native run-android",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "lint": "eslint \"{.,{src,__tests__}/**}/*.js\"",
+    "format": "prettier --write \"{.,{src,__tests__}/**}/*.{js,json,md}\""
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "16.8.3",
+    "react-native": "0.59.9",
+    "react-native-gesture-handler": "^1.3.0",
+    "react-navigation": "^3.11.0",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "eslint": "^5.0.0",
+    "eslint-config-jesper": "^2.1.0",
+    "husky": "^2.4.1",
+    "jest": "^24.8.0",
+    "lint-staged": "^8.2.1",
+    "metro-react-native-babel-preset": "^0.54.1",
+    "prettier": "^1.18.2",
+    "react-test-renderer": "16.8.3"
+  },
+  "babel": {
+    "presets": [
+      "module:metro-react-native-babel-preset"
+    ]
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-jesper"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint",
+      "prettier --write",
+      "jest",
+      "git add"
+    ]
+  }
+}
