@@ -6,7 +6,6 @@
 
 ## Setup
 * `yarn` or `yarn install`
-* `react-native link react-native-gesture-handler`
 * Copy the file `android/local.properties.example` to `android/local.properties`
 * Change `sdk.dir` in the file `local.properties` to your machines Android SDK location
 * Change the `config.device` in `package.json` to the name of your installed device in AVD*
