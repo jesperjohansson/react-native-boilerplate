@@ -8,7 +8,7 @@
     "url": "https://github.com/jesperjohansson"
   },
   "config": {
-    "device": "Pixel_3_API_23"
+    "device": "Pixel_2_API_28"
   },
   "scripts": {
     "dev": "yarn simulate",
